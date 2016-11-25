@@ -30,3 +30,9 @@ task createDB(type: JavaExec) {
     classpath = sourceSets.main.runtimeClasspath
     main = "database.CreateDB"
 }
+
+task queryDB(type: JavaExec) {
+    classpath = sourceSets.main.runtimeClasspath
+    main = "database.QueryDB"
+    standardInput = System.in
+}
