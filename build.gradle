@@ -16,11 +16,17 @@ sourceCompatibility = 1.8
 targetCompatibility = 1.8
 
 dependencies {
+    compile 'org.xerial:sqlite-jdbc:3.15.1'
     compile "joda-time:joda-time:2.2"
     testCompile "junit:junit:4.12"
 }
 
 task runApplication(type: JavaExec) {
-    classpath sourceSets.main.runtimeClasspath
+    classpath = sourceSets.main.runtimeClasspath
     main = "application.Main"
+}
+
+task createDB(type: JavaExec) {
+    classpath = sourceSets.main.runtimeClasspath
+    main = "database.CreateDB"
 }
